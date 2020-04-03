@@ -1,0 +1,23 @@
+<div class="row">
+  <div v-for="item in products" class="col-12 col-sm-6 col-md-3 col-lg-3">
+    <div class="product-card">
+    <div class="img-wraper"><img class="product-img" v-bind:src="getImgUrl(item.img)" v-bind:alt="item.img"/></div>
+    <i class="icon-heart-empty"></i>
+    <div class="card-body">
+    <h3>
+      {{ item.name }}
+    </h3>
+    <div class="price">
+      <span>price :</span> {{item.price}}
+    </div>
+    
+
+        <div class="starrating d-flex">
+            <input type="radio" name="rating" value="1" v-for="n in item.rateing"/><label for="1" v-bind:title="item.rateing +' stars'"v-for="n in item.rateing"></label>
+            <input type="radio" name="rating" value="2" v-for="n in item.emptyStars"/><label for="2" v-bind:title="item.rateing +' stars'"v-for="n in item.emptyStars"></label>
+        </div>
+  	
+   </div>
+  </div>
+  </div>
+</div>
